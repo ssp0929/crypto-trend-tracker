@@ -1,1 +1,3 @@
-# Testing
+# Crypto trend tracker.
+
+> Initial commit.
