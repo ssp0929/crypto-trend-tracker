@@ -31,7 +31,7 @@ def scrape():
         temp['url'] = submission.url
         data.append(temp)
 
-    with open('scripts/reddit_scraper/data.json', 'w') as outfile:
+    with open('data/reddit_data.json', 'w') as outfile:
         json.dump(data, outfile)
 
 def main():

@@ -1,7 +1,15 @@
 # Crypto trend tracker.
 
-Reddit script:
+Reddit scrape script:
 
-> pipenv run python scripts/reddit_scraper/reddit_scraper.py
+> pipenv run python scripts/reddit/reddit_scraper.py
 
-Output in data.txt
+Output in data/data.json
+
+---
+
+Parser:
+
+> pipenv run python scripts/parser/data_parser.py
+
+Output in data/mention_count.json
