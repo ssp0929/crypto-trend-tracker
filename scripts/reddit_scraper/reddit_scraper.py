@@ -1,4 +1,5 @@
 import logging
+import json
 import praw
 
 def log_init():
@@ -20,15 +21,18 @@ def scrape():
     # Subreddits to scrape, for now one.
     subreddit = reddit.subreddit('cryptocurrency')
 
-    f = open('reddit_scraper/data.txt', 'w')
+    data = []
     # Iterate through a subreddit's top X submissions
     for submission in subreddit.hot(limit=20):
-        f.write(submission.title + '\n' +
-                str(submission.score) + '\n' +
-                str(submission.id) + '\n' +
-                submission.url + '\n\n')
+        temp = {}
+        temp['id'] = submission.id
+        temp['title'] = submission.title
+        temp['score'] = submission.score
+        temp['url'] = submission.url
+        data.append(temp)
 
-    f.close()
+    with open('scripts/reddit_scraper/data.json', 'w') as outfile:
+        json.dump(data, outfile)
 
 def main():
     log_init()
