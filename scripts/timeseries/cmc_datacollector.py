@@ -1,7 +1,8 @@
+import time
+
 import coinmarketcap
 import pandas as pd
 import numpy as np
-import time
 
 #######################################################################
 #######################################################################
@@ -21,21 +22,22 @@ def get_price(currency, market):
     return crypto_price
 
 # create list of cryptos from file containing targets
-def gen_list(cryptolist):
-    with open("cryptolist.txt", "r") as readfile:
+def gen_list():
+    c_list = []
+    with open("crypto_list.txt", "r") as readfile:
         for line in readfile:
             currency = line.split()[0]
-            cryptolist.append(currency)
+            c_list.append(currency)
 
-    return cryptolist
+    return c_list
 
 # update dataframe entries (i,j) by iterating through
 # and retrieving data from api. Look at upgrading this method.
-def update_dataframe(cryptoarray, cryptolist, discrete_points, market):
+def update_dataframe(crypto_array, crypto_list, discrete_points, market):
     for row in range(discrete_points):
-        for currency in cryptolist:
+        for currency in crypto_list:
             price = get_price(currency, market)
-            cryptoarray.at[row, currency] = price
+            crypto_array.at[row, currency] = price
             # debug prints
             print(price)
         time.sleep(3600)
@@ -44,16 +46,14 @@ def main():
     # initialize parameters
     market = coinmarketcap.Market()
     discrete_points = 720
-    cryptolist = []
+    crypto_list = gen_list()
 
     # memory/efficieny problems
-    cryptoarray = pd.DataFrame(index=np.arange(0, discrete_points), columns=(i for i in cryptolist))
-
-    cryptolist = gen_list(cryptolist)
-    update_dataframe(cryptoarray, cryptolist, discrete_points, market)
+    crypto_array = pd.DataFrame(index=np.arange(0, discrete_points), columns=(i for i in crypto_list))
+    update_dataframe(crypto_array, crypto_list, discrete_points, market)
 
     # output dataframe to a csv for later analysis
-    cryptoarray.to_csv('data/example2.csv')
+    crypto_array.to_csv('data/crypto_dataframe.csv')
 
 if __name__ == '__main__':
     main()
