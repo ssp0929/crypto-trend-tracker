@@ -1,8 +1,15 @@
+'''
+Reddit bot to scrape reddit and export post and comment data for later analysis.
+'''
+
 import logging
 import json
 import praw
 
 def log_init():
+
+    ''' Basic logger for HTTP requests initiated by PRAW '''
+
     handler = logging.StreamHandler()
     handler.setLevel(logging.DEBUG)
     logger = logging.getLogger('prawcore')
@@ -10,8 +17,12 @@ def log_init():
     logger.addHandler(handler)
 
 def scrape():
-    # Initialize praw Reddit instance.
-    # This bot only scrapes data, so read-only is fine.
+
+    '''
+    Initialize praw Reddit instance.
+    This bot only scrapes data, so read-only is fine.
+    '''
+
     # Hardcode for now because repo is private.
     reddit = praw.Reddit(client_id='dSDs-_PW0eb4RA',
                          client_secret='A6a2PTksaeweAs5Ev-fiYmbrHe8',
@@ -31,10 +42,14 @@ def scrape():
         temp['url'] = submission.url
         data.append(temp)
 
+    # Export to JSON file.
     with open('data/reddit_data.json', 'w') as outfile:
         json.dump(data, outfile)
 
 def main():
+
+    ''' Driver for program '''
+
     log_init()
     scrape()
 
