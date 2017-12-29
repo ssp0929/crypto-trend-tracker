@@ -8,7 +8,7 @@ For example:
 
 "enigma-project" is the call name on coinmarketcap api.
 
-However, on reddit it would be reffered to as only "enigma" 
+However, on reddit it would be referred to as only "enigma" 
 
 
 

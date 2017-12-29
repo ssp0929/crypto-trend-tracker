@@ -34,8 +34,6 @@ def gen_list():
 
     return c_list
 
-# update dataframe entries (i,j) by iterating through
-# and retrieving data from api. Look at upgrading this method.
 def update_dataframe(crypto_array, crypto_list, discrete_points, market):
 
     '''
