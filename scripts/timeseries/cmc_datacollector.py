@@ -8,7 +8,7 @@ time period. Results are output into a CSV file to later analyze
 
 import time
 
-import coinmarketcap
+from coinmarketcap import Market
 import pandas as pd
 import numpy as np
 
@@ -54,7 +54,7 @@ def main():
     ''' program driver '''
 
     # initialize parameters
-    market = coinmarketcap.Market()
+    market = Market()
     discrete_points = 720
     crypto_list = gen_list()
 
@@ -62,7 +62,7 @@ def main():
     crypto_array = pd.DataFrame(index=np.arange(0, discrete_points),
                                 columns=(i for i in crypto_list))
 
-    #update dataframe, sleep 60 minute intervals.
+    # update dataframe, sleep 60 minute intervals.
     update_dataframe(crypto_array, crypto_list, discrete_points, market)
 
     # output dataframe to a csv for later analysis
