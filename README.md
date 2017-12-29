@@ -6,7 +6,7 @@ Basic scrape of top X posts from a subreddit.
 
 > pipenv run python scripts/reddit/reddit_scraper.py
 
-Output in data/data.json
+Output in data/reddit_data.json
 
 ---
 
@@ -16,7 +16,7 @@ TODO: Parses data generated from reddit scrape script to track mentions of crypt
 
 > pipenv run python scripts/parser/data_parser.py
 
-Output in data/mention_count.json
+Output in data/mention_count.json (not implemented yet)
 
 ---
 
@@ -34,5 +34,7 @@ Generates cryptoscore if it does not exist...
 Updates if it does with any new coins added to the coinmarketcap database without overwriting existing data.
 
 > pipenv run python scripts/coinmarketcap/cryptoscore.py
+
+Output in cryptocurrencies/cryptoscore.json
 
 ---
