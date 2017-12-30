@@ -3,6 +3,7 @@ xrp
 ada
 xmr
 neo
+xlm
 lsk
 trx
 ardr
@@ -35,5 +36,4 @@ zen
 act
 qsp
 kin
-amb
 wabi
