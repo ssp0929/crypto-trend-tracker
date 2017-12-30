@@ -3,6 +3,7 @@ ripple
 cardano
 monero
 neo
+stellar
 lisk
 tron
 ardor
