@@ -63,4 +63,17 @@ Each index in the array contains 20 dict's mapped to each tracked currency.
 ]
 ```
 
+So once you load this dataset into memory, this pseudocode will give you a general sense...
+
+```
+import json
+
+data = json.load(open('cryptocurrencies/cryptoscore.json'))
+
+# To access the twitter score of ripple on the 12th hour since data collection. (Arrays start at 0, so watch for off by one errors).
+
+data[11]['ripple']['twitter_score']
+```
+
+
 
