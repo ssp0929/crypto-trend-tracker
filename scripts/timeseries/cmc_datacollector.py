@@ -12,7 +12,6 @@ from coinmarketcap import Market
 import pandas as pd
 import numpy as np
 
-
 def get_price(currency, market):
 
     '''function to return price of a cryptocurrency from cmc api'''
