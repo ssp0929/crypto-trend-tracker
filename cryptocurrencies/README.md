@@ -27,15 +27,22 @@ Each index in the array contains 20 dict's mapped to each tracked currency.
       reddit_score: 0
     },
     "crypto_1": {
-
-      ...
-
+      twitter_score: 0,
+      reddit_score: 0
     },
 
     ...
 
   },
   (t_delta 1) {
+    "crypto_0": {
+      twitter_score: 0,
+      reddit_score: 0
+    },
+    "crypto_1": {
+      twitter_score: 0,
+      reddit_score: 0
+    },
 
     ...
 
@@ -44,9 +51,14 @@ Each index in the array contains 20 dict's mapped to each tracked currency.
   ...
 
   (t_delta 719) {
-
-    ...
-
+    "crypto_0": {
+      twitter_score: 0,
+      reddit_score: 0
+    },
+    "crypto_1": {
+      twitter_score: 0,
+      reddit_score: 0
+    },
   }
 ]
 ```
