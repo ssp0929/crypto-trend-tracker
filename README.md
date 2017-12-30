@@ -33,7 +33,7 @@ Grabs cryptocurrency metric data every 60 minutes from coinmarketcap. Does stuff
 Generates cryptoscore if it does not exist...
 Updates if it does with any new coins added to the coinmarketcap database without overwriting existing data.
 
-> pipenv run python scripts/coinmarketcap/cryptoscore.py
+> pipenv run python scripts/cryptoscore/cryptoscore.py
 
 Output in cryptocurrencies/cryptoscore.json
 
