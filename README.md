@@ -2,7 +2,7 @@
 
 ## Reddit scrape script
 
-Basic scrape of top X posts from a subreddit.
+Scrape top 25 posts of a given subreddit(s) and parse comments for tracked list mentions.
 
 > pipenv run python scripts/reddit/reddit_scraper.py
 
@@ -22,19 +22,17 @@ Output in data/mention_count.json (not implemented yet)
 
 ## CMC script
 
-Grabs cryptocurrency metric data every 60 minutes from coinmarketcap. Does stuff with Pandas. Yeah...
+Grabs cryptocurrency price data every 60 minutes from coinmarketcap.
 
-> pipenv run python scripts/timeseries/cmc_datacollector.py
+> pipenv run python scripts/coinmarketcap/cmc_scraper.py
 
 ---
 
-## Cryptoscore Generator/Updater
+## Cryptoscore Generator
 
 Generates cryptoscore if it does not exist...
 Updates if it does with any new coins added to the coinmarketcap database without overwriting existing data.
 
 > pipenv run python scripts/cryptoscore/cryptoscore.py
-
-Output in cryptocurrencies/cryptoscore.json
 
 ---
