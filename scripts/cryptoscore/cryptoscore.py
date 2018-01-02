@@ -1,7 +1,6 @@
 '''Generate/update cryptoscore.json file that tracks score/metrics of valid crypto'''
 
 import json
-import os
 
 from coinmarketcap import Market
 
@@ -10,15 +9,12 @@ def generate_cryptoscore(current_cryptolist, curated_cryptolist):
     ''' First time generation of cryptoscore list based on curated list'''
 
     # Instantiate list for post-conversion
-    new_cryptolist = {}
+    new_cryptolist = []
 
     # Reassemble data into a single JSON object for future update efficiency
     for values in current_cryptolist:
         if values['id'] in curated_cryptolist:
-            new_cryptolist[values['id']] = {
-                'twitter_score': 0,
-                'reddit_score': 0
-            }
+            new_cryptolist.append([0,0])
 
     # Time vs. score array.
     t_score = []
