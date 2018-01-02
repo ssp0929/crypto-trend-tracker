@@ -13,7 +13,7 @@ waves
 stratis
 nxt
 komodo
-binance-coin 
+binance-coin
 ark
 pivx
 vechain
