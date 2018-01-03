@@ -1,11 +1,11 @@
 '''
-Reddit bot to scrape reddit and export post and comment data for later analysis.
+Reddit bot to scrape reddit and export submission_object and comment data for later analysis.
 '''
+# pylint: disable=C0200, R0914
 
 import logging
 import json
 import praw
-from praw.models import MoreComments
 
 def log_init():
 
@@ -40,65 +40,69 @@ def scrape():
     cryptolist_list = []
     cryptosymbols_list = []
 
-    with open('cryptocurrencies/cryptolist.txt', 'r') as c_list:
-        for line in c_list:
+    with open('cryptocurrencies/cryptolist.txt', 'r') as readfile:
+        for line in readfile:
             data_score.append([line.strip(), 0])
             cryptolist_list.append(line.split("-")[0].strip())
 
-    with open('cryptocurrencies/cryptotickers.txt', 'r') as c_symbol:
-        for line in c_symbol:
+    with open('cryptocurrencies/cryptotickers.txt', 'r') as readfile:
+        for line in readfile:
             cryptosymbols_list.append(line.strip())
 
     # Subreddits to scrape
-    subreddit_list = ['cryptocurrency']
-    for subreddit_to_track in subreddit_list:
-        subreddit = reddit.subreddit(subreddit_to_track)
+    subreddits_to_track = ['cryptocurrency']
+    for tracked_subreddit in subreddits_to_track:
+        subreddit = reddit.subreddit(tracked_subreddit)
 
         # Final array that will be written to score_context outfile.
         data = []
 
         # Iterate through a subreddit's top X submissions
         for submission in subreddit.hot(limit=25):
-            thread_metadata = {}
+            submission_object = {}
             comment_list = []
 
             # Iterate through comment tree.
             submission.comments.replace_more(limit=0)
             for comment in submission.comments:
-                comment_metadata = {}
+                comment_object = {}
 
                 # Filter for comment scores that are less than a certain score
                 if comment.score < 2:
                     continue
 
                 # Check to see if any in cryptolist/cryptotickers are mentioned
-                # Bool to check if any cryptos were found, if none then discard comment from context.
+                # Check if any cryptos were found, if none then discard comment from context.
                 match_found = False
                 # List of matches associated with a comment block, used for context
                 matches_list = []
                 for i in range(len(cryptolist_list)):
                     row = data_score[i]
-                    temp_body = comment.body.lower().split()
-                    if cryptolist_list[i] in temp_body or cryptosymbols_list[i] in temp_body:
+                    comment_contents = comment.body.lower().split()
+
+                    # Find matches
+                    if cryptolist_list[i] in comment_contents or \
+                       cryptosymbols_list[i] in comment_contents:
                         matches_list.append(cryptolist_list[i])
                         match_found = True
                         row[1] = row[1] + 1
 
+                # If match not found, then don't include comment in context data.
                 if not match_found:
                     continue
                 else:
-                    comment_metadata['score'] = comment.score
-                    comment_metadata['matches'] = matches_list
-                    comment_metadata['content'] = comment.body
+                    comment_object['score'] = comment.score
+                    comment_object['matches'] = matches_list
+                    comment_object['content'] = comment.body
 
-                    # Append to a list for later inclusion into thread_metadata
-                    comment_list.append(comment_metadata)
+                    # Append to a list for later inclusion into submission_object
+                    comment_list.append(comment_object)
 
-            # Create thread object mapped to a single thread
-            thread_metadata['title'] = submission.title
-            thread_metadata['score'] = submission.score
-            thread_metadata['comments'] = comment_list
-            data.append(thread_metadata)
+            # Create submission_object mapped to a single submission
+            submission_object['title'] = submission.title
+            submission_object['score'] = submission.score
+            submission_object['comments'] = comment_list
+            data.append(submission_object)
 
         # Export to JSON file. This contains some context to score data.
         with open('data/reddit_data.json', 'w') as outfile:

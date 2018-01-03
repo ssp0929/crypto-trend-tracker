@@ -1,7 +1,7 @@
 '''Generate/update cryptoscore.json file that tracks score/metrics of valid crypto'''
+# pylint: disable=W0612, E0401
 
 import json
-
 from coinmarketcap import Market
 
 def generate_cryptoscore(current_cryptolist, curated_cryptolist):
@@ -38,8 +38,8 @@ def main():
 
     # Load curated list into hashtable
     curated_cryptolist = {}
-    with open('cryptocurrencies/cryptolist.txt') as f:
-        for line in f:
+    with open('cryptocurrencies/cryptolist.txt') as readfile:
+        for line in readfile:
             curated_cryptolist[line.strip()] = 1 # placeholder, really just need the hash table.
 
     # Grab all cryptocurrencies from coinmarketcap

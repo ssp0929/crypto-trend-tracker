@@ -1,6 +1,6 @@
 '''Parse reddit and twitter exported JSON data to track mention metrics'''
+
 import json
-from pprint import pprint
 
 def reddit_parse():
 

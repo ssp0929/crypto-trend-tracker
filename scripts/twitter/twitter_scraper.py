@@ -1,6 +1,7 @@
 '''
 Twitter bot to scrape twitter and export tweet data for later analysis.
 '''
+# pylint: disable=E0401
 
 import tweepy
 from tweepy import OAuthHandler
@@ -9,8 +10,12 @@ def scrape():
 
     ''' Scrape method '''
 
-
-
+    # Load twitter users
+    # Convert to list
+    twitter_list = []
+    with open('twitterlist.txt', 'r') as readfile:
+        for line in readfile:
+            twitter_list.append(line.strip())
 
 def main():
 

@@ -5,6 +5,7 @@ currencies to analyze will be targeted from a list given in a .txt
 file. Initial assessment is to be conducted hourly over a monthly
 time period. Results are output into a CSV file to later analyze
 '''
+# pylint: disable=E0401
 
 import pandas as pd
 import numpy as np

@@ -1,6 +1,7 @@
 '''
 Grab bitcoin price of crypto targets.
 '''
+# pylint: disable=E0401
 
 import json
 from coinmarketcap import Market
