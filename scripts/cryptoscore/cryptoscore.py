@@ -12,14 +12,16 @@ def generate_cryptoscore(current_cryptolist, curated_cryptolist):
     new_cryptolist = []
 
     # Reassemble data into a single JSON object for future update efficiency
+    # Index of new_cryptolist respectively refer to...
+    # Crypto-id, twitter_score, reddit_score, and usd_price.
     for values in current_cryptolist:
         if values['id'] in curated_cryptolist:
-            new_cryptolist.append([0,0])
+            new_cryptolist.append([values['id'], 0, 0, 0.0])
 
     # Time vs. score array.
     t_score = []
 
-    # Generate Time vs score objects in array, 720 points.
+    # 720 points corresponding to hourly scrape data.
     for i in range(720):
         t_score.append(new_cryptolist)
 
