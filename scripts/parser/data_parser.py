@@ -7,7 +7,7 @@ def reddit_parse():
     '''Parse reddit data'''
 
     reddit_data = json.load(open('data/reddit_data_score.json'))
-    cryptoscore_list = json.load(open('cryptocurrencies/cryptoscore.json'))
+    cryptoscore_list = json.load(open('input_data/cryptoscore.json'))
 
     # Iterate through data and track mentions
 

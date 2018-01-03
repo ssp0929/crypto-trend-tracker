@@ -40,12 +40,12 @@ def scrape():
     cryptolist_list = []
     cryptosymbols_list = []
 
-    with open('cryptocurrencies/cryptolist.txt', 'r') as readfile:
+    with open('input_data/cryptolist.txt', 'r') as readfile:
         for line in readfile:
             data_score.append([line.strip(), 0])
             cryptolist_list.append(line.split("-")[0].strip())
 
-    with open('cryptocurrencies/cryptotickers.txt', 'r') as readfile:
+    with open('input_data/cryptotickers.txt', 'r') as readfile:
         for line in readfile:
             cryptosymbols_list.append(line.strip())
 

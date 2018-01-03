@@ -13,7 +13,7 @@ def scrape():
     # Load twitter users
     # Convert to list
     twitter_list = []
-    with open('twitterlist.txt', 'r') as readfile:
+    with open('input_data/twitterlist.txt', 'r') as readfile:
         for line in readfile:
             twitter_list.append(line.strip())
 

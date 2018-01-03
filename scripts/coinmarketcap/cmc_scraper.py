@@ -24,7 +24,7 @@ def main():
     data_price = []
 
     # Populate crypto/price list
-    with open('cryptocurrencies/cryptolist.txt', 'r') as readfile:
+    with open('input_data/cryptolist.txt', 'r') as readfile:
         for line in readfile:
             print(line)
             data_price.append([line.strip(), get_price(line.strip(), market)])

@@ -26,7 +26,7 @@ def generate_cryptoscore(current_cryptolist, curated_cryptolist):
         t_score.append(new_cryptolist)
 
     # Export to JSON
-    with open('cryptocurrencies/cryptoscore.json', 'w') as outfile:
+    with open('input_data/cryptoscore.json', 'w') as outfile:
         json.dump(t_score, outfile)
 
 def main():
@@ -38,7 +38,7 @@ def main():
 
     # Load curated list into hashtable
     curated_cryptolist = {}
-    with open('cryptocurrencies/cryptolist.txt') as readfile:
+    with open('input_data/cryptolist.txt') as readfile:
         for line in readfile:
             curated_cryptolist[line.strip()] = 1 # placeholder, really just need the hash table.
 

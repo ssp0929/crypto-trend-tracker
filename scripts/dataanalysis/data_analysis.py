@@ -24,7 +24,7 @@ def gen_list():
     '''create list of cryptos from file containing targets'''
 
     crypto_list = []
-    with open("crypto_list.txt", "r") as readfile:
+    with open("input_data/cryptolist.txt", "r") as readfile:
         for line in readfile:
             crypto_list.append(line.strip())
 
