@@ -37,7 +37,7 @@ def main():
     discrete_points = 720
     crypto_list = gen_list()
 
-    # memory/efficieny problems
+    # Create dataframe
     crypto_array = pd.DataFrame(index=np.arange(0, discrete_points),
                                 columns=(i for i in crypto_list))
 
