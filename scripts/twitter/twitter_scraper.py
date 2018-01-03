@@ -28,11 +28,14 @@ def main():
     access_token = '461520833-5pgg2wYQUxlCjjWBfaft7Xbw5jC2U8c5JymH7xab'
     access_secret = '9HFVyWeoFQhc2ERx2CvjxvjIqzVMvJkSHMkzQ3hvdhqdv'
 
+    # OAuth
     auth = OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_secret)
 
+    # Instantiate API
     api = tweepy.API(auth)
 
+    # Test, get self timeline tweets, print to console
     public_tweets = api.home_timeline()
     for tweet in public_tweets:
         print(tweet.text)
