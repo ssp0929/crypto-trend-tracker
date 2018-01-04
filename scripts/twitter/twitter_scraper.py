@@ -1,21 +1,41 @@
 '''
 Twitter bot to scrape twitter and export tweet data for later analysis.
 '''
-# pylint: disable=E0401
+# pylint: disable=E0401, C0301, W0212
 
+import json
+import io
 import tweepy
 from tweepy import OAuthHandler
 
-def scrape():
+def get_list_timeline(api):
 
-    ''' Scrape method '''
+    ''' Get timeline of curated twitter followers '''
 
-    # Load twitter users
-    # Convert to list
-    twitter_list = []
-    with open('input_data/twitterlist.txt', 'r') as readfile:
-        for line in readfile:
-            twitter_list.append(line.strip())
+    # List name and list owner name for later use
+    list_name = 'crypto-trend-tracker-list'
+    list_owner = '___stephenpark'
+
+    # Get timeline of tweets/retweets to terminal
+    curated_list_timeline = api.list_timeline(list_owner, list_name)
+
+    # Export to file, need encoding specification because emojis in tweets break ASCII
+    with io.open('scripts/twitter/timeline_dump.txt', mode='w', encoding='utf-8') as outfile:
+        for status in curated_list_timeline:
+            outfile.write("-------------\n" + status.text + "\n")
+
+def get_rate_limit(api):
+
+    ''' Get rate limit data and export to file + terminal '''
+
+    # Check rate limit status each run
+    rate_limit_json = api.rate_limit_status()
+    rate_limit_remaining = rate_limit_json['resources']['application']['/application/rate_limit_status']['remaining']
+    print('App-wide API requests remaining for current hour: ' + str(rate_limit_remaining))
+
+    # Export to file
+    with open('scripts/twitter/rate_limit_log.json', 'w') as outfile:
+        json.dump(rate_limit_json, outfile)
 
 def main():
 
@@ -23,6 +43,7 @@ def main():
 
     # Keys, secrets, and tokens. Hard coded because code isn't open-source and visible.
     # IMPERATIVE THAT THIS CODE IS NOT MADE PUBLIC.
+    # At least until I obfuscate and open source this myself
     consumer_key = 'Foxiwn9uPMr717PyncbHC45Kk'
     consumer_secret = 'MS0V32zOnpt3JuMX9sBHFVWD4gPZP1yzvsECgNfIerODlL6mZT'
     access_token = '461520833-5pgg2wYQUxlCjjWBfaft7Xbw5jC2U8c5JymH7xab'
@@ -32,13 +53,14 @@ def main():
     auth = OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_secret)
 
-    # Instantiate API
+    # Map auth to API calls
     api = tweepy.API(auth)
 
-    # Test, get self timeline tweets, print to console
-    public_tweets = api.home_timeline()
-    for tweet in public_tweets:
-        print(tweet.text)
+    # Check rate limit status each run
+    get_rate_limit(api)
+
+    # Get timeline of curated twitter followers
+    get_list_timeline(api)
 
 if __name__ == '__main__':
     main()
