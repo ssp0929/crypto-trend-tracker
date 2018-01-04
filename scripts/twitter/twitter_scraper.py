@@ -12,9 +12,9 @@ def get_list_timeline(api):
 
     ''' Get timeline of curated twitter followers '''
 
-    # List name and list owner name for later use
-    list_name = 'crypto-trend-tracker-list'
-    list_owner = '___stephenpark'
+    # Public list created by Moes19
+    list_name = 'Crypto'
+    list_owner = 'derek_finley'
 
     # Get timeline of tweets/retweets to terminal
     curated_list_timeline = api.list_timeline(list_owner, list_name)
