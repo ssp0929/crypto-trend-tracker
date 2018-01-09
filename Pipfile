@@ -9,7 +9,7 @@ praw = "*"
 coinmarketcap = "*"
 pandas = "*"
 numpy = "*"
-tweepy = "*"
+"python-twitter" = "*"
 
 
 [dev-packages]
