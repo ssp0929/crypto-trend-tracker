@@ -50,6 +50,8 @@ def scrape():
             cryptosymbols_list.append(line.strip())
 
     # Subreddits to scrape
+    # TODO: Clean up this method. Big O(n*m*k*l) not good.
+    # Relatively inconsequential for a script that only runs once every 60 minutes...
     subreddits_to_track = ['cryptocurrency']
     for tracked_subreddit in subreddits_to_track:
         subreddit = reddit.subreddit(tracked_subreddit)
