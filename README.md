@@ -49,3 +49,7 @@ Generates example file of what final data table will look like before analysis i
 > pipenv run python scripts/cryptoscore/cryptoscore.py
 
 ---
+
+## Credentials.json
+
+Input credentials here for Reddit and Twitter API.
