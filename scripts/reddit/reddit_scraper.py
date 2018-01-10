@@ -24,11 +24,12 @@ def scrape():
     This bot only scrapes data, so read-only is fine.
     '''
 
-    # Hardcode for now because repo is private.
-    reddit = praw.Reddit(client_id='dSDs-_PW0eb4RA',
-                         client_secret='A6a2PTksaeweAs5Ev-fiYmbrHe8',
-                         user_agent='crypto-bot-ua',
-                         username='crypto-trend-tracker-bot')
+    # Load from credentials file that isn't tracked by git.
+    credentials = json.load(open('credentials.json'))['reddit']
+    reddit = praw.Reddit(client_id=credentials['client_id'],
+                         client_secret=credentials['client_secret'],
+                         user_agent=credentials['user_agent'],
+                         username=credentials['username'])
 
     # Final array that will be written to score outfile.
     data_score = []

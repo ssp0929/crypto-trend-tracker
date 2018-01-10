@@ -1,2 +1,3 @@
 coinmarketcap_cache.sqlite
 input_data/cryptoscore.json
+credentials.json

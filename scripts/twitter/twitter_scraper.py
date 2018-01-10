@@ -28,13 +28,12 @@ def main():
 
     ''' Program driver '''
 
-    # Keys, secrets, and tokens. Hard coded because code isn't open-source and visible.
-    # IMPERATIVE THAT THIS CODE IS NOT MADE PUBLIC.
-    # At least until I obfuscate and open source this myself
-    api = twitter.Api(consumer_key = 'Foxiwn9uPMr717PyncbHC45Kk',
-                      consumer_secret = 'MS0V32zOnpt3JuMX9sBHFVWD4gPZP1yzvsECgNfIerODlL6mZT',
-                      access_token_key = '461520833-5pgg2wYQUxlCjjWBfaft7Xbw5jC2U8c5JymH7xab',
-                      access_token_secret = '9HFVyWeoFQhc2ERx2CvjxvjIqzVMvJkSHMkzQ3hvdhqdv')
+    # Load credentials from non-git tracked file.
+    credentials = json.load(open('credentials.json'))['twitter']
+    api = twitter.Api(consumer_key=credentials['consumer_key'],
+                      consumer_secret=credentials['consumer_secret'],
+                      access_token_key=credentials['access_token_key'],
+                      access_token_secret=credentials['access_token_secret'])
 
     # Get timeline of curated twitter followers
     get_list_timeline(api)
