@@ -10,6 +10,7 @@ coinmarketcap = "*"
 pandas = "*"
 numpy = "*"
 "python-twitter" = "*"
+pytrends = "*"
 
 
 [dev-packages]
