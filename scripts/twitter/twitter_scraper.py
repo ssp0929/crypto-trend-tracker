@@ -29,7 +29,7 @@ def main():
     ''' Program driver '''
 
     # Load credentials from non-git tracked file.
-    credentials = json.load(open('credentials.json'))['twitter']
+    credentials = json.load(open('credentials.json')).get('twitter')
     api = twitter.Api(consumer_key=credentials['consumer_key'],
                       consumer_secret=credentials['consumer_secret'],
                       access_token_key=credentials['access_token_key'],

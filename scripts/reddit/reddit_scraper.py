@@ -25,7 +25,7 @@ def scrape():
     '''
 
     # Load from credentials file that isn't tracked by git.
-    credentials = json.load(open('credentials.json'))['reddit']
+    credentials = json.load(open('credentials.json')).get('reddit')
     reddit = praw.Reddit(client_id=credentials['client_id'],
                          client_secret=credentials['client_secret'],
                          user_agent=credentials['user_agent'],
