@@ -97,7 +97,7 @@ def scrape(reddit):
                     continue
 
                 # Filter for comments made after last check date
-                if comment.created < last_run_time:
+                if comment.created_utc < last_run_time:
                     continue
 
                 # Check to see if any in cryptolist/cryptotickers are mentioned
