@@ -26,7 +26,7 @@ def generate_cryptoscore(current_cryptolist, curated_cryptolist):
         t_score.append(new_cryptolist)
 
     # Export to JSON
-    with open('input_data/cryptoscore.json', 'w') as outfile:
+    with open('scripts/cryptoscore/cryptoscore_template.json', 'w') as outfile:
         json.dump(t_score, outfile)
 
 def main():

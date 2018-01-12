@@ -11,7 +11,7 @@ def get_price(currency, market):
     '''function to return price of a cryptocurrency from cmc api'''
 
     crypto = market.ticker(currency)[0]
-    crypto_price = float(crypto['price_usd'])
+    crypto_price = float(crypto.get('price_usd'))
 
     return crypto_price
 
@@ -30,7 +30,7 @@ def main():
             data_price.append([line.strip(), get_price(line.strip(), market)])
 
     # Export to JSON
-    with open('data/cmc_data_price.json', 'w') as outfile:
+    with open('data/cmc_output.json', 'w') as outfile:
         json.dump(data_price, outfile)
 
 if __name__ == '__main__':
