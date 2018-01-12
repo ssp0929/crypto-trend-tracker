@@ -73,7 +73,9 @@ def scrape(reddit):
         reddit_config = json.load(readfile)
         subreddits_to_track = reddit_config.get('subreddits-to-track')
         last_run_time = reddit_config.get('last-run-time', 0)
-        reddit_config.update({ 'last-run-time': time.time() })
+        minimum_comment_score = reddit_config.get('minimum-comment-score', 0)
+        subreddit_parse_limit = reddit_config.get('subreddit-parse-limit', 25)
+        reddit_config.update({'last-run-time': time.time()})
 
     with open('reddit_config.json', 'w') as outfile:
         json.dump(reddit_config, outfile)
@@ -85,7 +87,7 @@ def scrape(reddit):
         data = []
 
         # Iterate through a subreddit's top X submissions
-        for submission in subreddit.hot(limit=25):
+        for submission in subreddit.hot(limit=subreddit_parse_limit):
             # List of comments tied to a specific submission thread
             comment_list = []
 
@@ -93,7 +95,7 @@ def scrape(reddit):
             submission.comments.replace_more(limit=0)
             for comment in submission.comments:
                 # Filter for comment scores that are less than a certain score
-                if comment.score < 2:
+                if comment.score < minimum_comment_score:
                     continue
 
                 # Filter for comments made after last check date
