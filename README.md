@@ -1,5 +1,14 @@
 # Crypto trend tracker.
 
+> ./run_scripts.sh
+
+To run all the scripts in conjuction in the order they were meant to be run.
+Final results will be in the /data/ folder as cryptoscore.json.
+Daily snapshots will be stored in cryptoscore_snapshot.
+Context data will be found in the relevent reddit and twitter folders.
+
+Use reddit config, twitter config, and pandas config files to make configuration changes.
+
 ---
 
 ## Twitter scrape script

@@ -43,9 +43,12 @@ So once you load this dataset into memory, this pseudocode will give you a gener
 ```
 import json
 
-data = json.load(open('cryptocurrencies/cryptoscore.json'))
+data = json.load(open('data/cryptoscore.json'))
 
-# To access the twitter score of ripple on the 12th hour since data collection. (Arrays start at 0, so watch for off by one errors).
+To access the twitter score of ripple on the 12th hour since data collection. (Arrays start at 0, so watch for off by one errors).
 
-data[11]['ripple'][0]
+11 refers to the 12th hour.
+2 refers to the 3rd position in the array row which refers to a coin's twitter score.
+
+data[11][2]
 ```

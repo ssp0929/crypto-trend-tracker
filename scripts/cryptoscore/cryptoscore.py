@@ -22,7 +22,7 @@ def generate_cryptoscore(current_cryptolist, curated_cryptolist):
     t_score = []
 
     # 720 points corresponding to hourly scrape data.
-    for i in range(3):
+    for i in range(2):
         t_score.append(new_cryptolist)
 
     # Export to JSON
