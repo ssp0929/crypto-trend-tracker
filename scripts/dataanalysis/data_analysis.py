@@ -7,10 +7,11 @@ time period. Results are output into a CSV file to later analyze
 '''
 # pylint: disable=E0401
 
+import json
 import pandas as pd
 import numpy as np
 
-def update_dataframe(crypto_array):
+def populate_dataframe(crypto_array, discrete_points):
 
     '''
     update dataframe entries (i,j) by iterating through
@@ -35,15 +36,17 @@ def main():
     ''' program driver '''
 
     # initialize parameters
-    discrete_points = 720
+    with open('pandas_config.json', 'r') as readfile:
+        discrete_points = json.load(readfile).get('discrete-points')
+
     crypto_list = gen_list()
 
     # Create dataframe
     crypto_array = pd.DataFrame(index=np.arange(0, discrete_points),
                                 columns=(i for i in crypto_list))
 
-    # update dataframe, sleep 60 minute intervals.
-    update_dataframe(crypto_array)
+    # populate dataframe
+    populate_dataframe(crypto_array, discrete_points)
 
     # output dataframe to a csv for later analysis
     crypto_array.to_csv('data/crypto_dataframe.csv')
