@@ -1,6 +1,1 @@
-{
-    "subreddits-to-track": ["cryptocurrency"],
-    "last-run-time": 1515788802.3141673,
-    "minimum-comment-score": 2,
-    "subreddit-parse-limit": 25
-}
+{"subreddits-to-track": ["cryptocurrency"], "last-run-time": 1515795943.114725, "minimum-comment-score": 2, "subreddit-parse-limit": 25}

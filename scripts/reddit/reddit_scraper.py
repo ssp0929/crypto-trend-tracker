@@ -1,7 +1,7 @@
 '''
 Reddit bot to scrape reddit and export submission_object and comment data for later analysis.
 '''
-# pylint: disable=C0200, R0914
+# pylint: disable=R0914
 
 import logging
 import json

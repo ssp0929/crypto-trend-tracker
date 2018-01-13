@@ -1,101 +1,157 @@
 [{
     "title": "Daily General Discussion - January 12, 2018",
-    "score": 102,
-    "comments": []
+    "score": 111,
+    "comments": [{
+        "score": 14,
+        "matches": ["request"],
+        "content": "[Request Network (REQ) is a project backed by Y-Combinator that bills itself as \"the future of commerce.\" How does the Request Network team plan to make that future a reality?](https://www.youtube.com/watch?v=yy-zm_k5Ses)"
+    }, {
+        "score": 12,
+        "matches": ["request"],
+        "content": "What do you guys think of a 15% portfolio investment into REQ right now at $.79?\n\nedit: I did it :)"
+    }, {
+        "score": 11,
+        "matches": ["walton"],
+        "content": "That moment when you check your 100% WTC portfolio after being offline for a day and you suddenly need clean underwear.."
+    }, {
+        "score": 11,
+        "matches": ["icon"],
+        "content": "Cmon ICX you beautiful bastard. "
+    }, {
+        "score": 8,
+        "matches": ["request"],
+        "content": "smart move to trade REQ for VEN right now?"
+    }, {
+        "score": 5,
+        "matches": ["icon"],
+        "content": "ICX cleared for takeoff. "
+    }, {
+        "score": 5,
+        "matches": ["ethereum", "stellar", "icon", "request"],
+        "content": "Hey guys, I finally was able to invest my money today. This is how I have my portfolio set. I'm so sorry to ask this, but please roast this if it looks like shit. \n\n25% ETH\n\n17% REQ\n\n15% XRB\n\n13% ICX\n\n\n\n10% VEN\n\n7% XLM\n\n6% BAT\n\n~6-8% ETH reserved for swing trading shit coins shilled on reddit\n\n"
+    }, {
+        "score": 4,
+        "matches": ["ethereum"],
+        "content": "To any coders out there; I'm someone with no knowledge of programming languages that's interested in learning. Researching blockchain technology has really got me curious about digging deeper into the mechanics of it. One day I might even be able to actually make something using this cool new concept, even if it's just a personal project.\n\nI wanted to know what kind of language I should start with, being a total beginner. So far I know that Bitcoin uses C++, which is I believe based on C, but I don't know if I need to learn C first. I also know Ethereum uses GoLang, which I've read is super easy to learn compared to C++ or other languages. Any thoughts?"
+    }, {
+        "score": 4,
+        "matches": ["walton"],
+        "content": "Why is Walton going absolutely mad? In a positive way."
+    }, {
+        "score": 3,
+        "matches": ["stellar"],
+        "content": "Can XLM pls rise already \ud83d\udc40"
+    }]
 }, {
     "title": "/r/CryptoCurrency is a Place for Quality Discussion",
-    "score": 150,
-    "comments": []
-}, {
-    "title": "BrainBlocks - PayPal Checkout lead engineer begins work on Raiblocks (XRB) checkout app",
-    "score": 3009,
+    "score": 214,
     "comments": []
 }, {
     "title": "Twitch, an Amazon company, now takes btc and coinbase payments.",
-    "score": 673,
-    "comments": []
+    "score": 1832,
+    "comments": [{
+        "score": 2,
+        "matches": ["tenx"],
+        "content": "Idk why you would pay for anything in btc anymore"
+    }]
 }, {
-    "title": "Rocky Balboa's motivational cryptocurrency speech",
-    "score": 916,
+    "title": "BrainBlocks - PayPal Checkout lead engineer begins work on Raiblocks (XRB) checkout app",
+    "score": 3173,
     "comments": []
 }, {
     "title": "(Oyster) Pearl completes re-brand & new website + hires new engineers + testnet confirmed for end of the month!",
-    "score": 337,
-    "comments": []
+    "score": 515,
+    "comments": [{
+        "score": 2,
+        "matches": ["enigma"],
+        "content": "PRL is definitely undervalued at the moment. \n\nI made my predictions on ENG when it was 0.80c and XRB when it was $1-$2. Calling it and saying PRL will be in the top 100 soon, just not sure where in the top 100 though. It is ultimately a niche coin but a good one."
+    }]
 }, {
-    "title": "Great News from South Korea!",
-    "score": 503,
-    "comments": []
-}, {
-    "title": "The current state of the crypto market",
-    "score": 8076,
-    "comments": []
-}, {
-    "title": "Buying alt coins",
-    "score": 333,
-    "comments": []
-}, {
-    "title": "ICON (ICX) - Expanding and Growing the Community",
-    "score": 533,
-    "comments": []
-}, {
-    "title": "Bad luck IOTA \ud83d\ude02",
-    "score": 839,
-    "comments": []
-}, {
-    "title": "Goodbye, Coinbase. Hello APPC: An alternative method to purchase cryptocurrency directly from the Android \"Aptoide\" app store. 200 million Android users will be holding cryptocurrency by the end of this year.",
-    "score": 631,
-    "comments": []
-}, {
-    "title": "Reminder: Make sure to backup your Google Authenticator keys",
-    "score": 447,
-    "comments": []
-}, {
-    "title": "Oyster Pearl (PRL) market cap doubles overnight on CoinMarketCap after they correct the circulating supply",
-    "score": 403,
-    "comments": []
-}, {
-    "title": "Bounty0x Bit-z Exchange Listing Bounty - 4 BNTY Reward",
-    "score": 100,
-    "comments": []
-}, {
-    "title": "XRP/Moneygram news made it to wall street papers this morning!",
-    "score": 112,
-    "comments": []
-}, {
-    "title": "Network Effects - The Inevitability of Waltonchain Adoption",
-    "score": 343,
-    "comments": []
-}, {
-    "title": "FYI to every newbie in crypto ever, you never make it in time.",
-    "score": 62,
+    "title": "Rocky Balboa's motivational cryptocurrency speech",
+    "score": 1119,
     "comments": []
 }, {
     "title": "The ID verification office at the exchanges",
-    "score": 56,
+    "score": 312,
     "comments": []
 }, {
-    "title": "Over 118,000 Koreans Have Signed a Petition to Reject the #Cryptocurrency Trading Ban Proposal",
-    "score": 324,
+    "title": "Great News from South Korea!",
+    "score": 654,
     "comments": []
 }, {
-    "title": "Enjin listed on Kucoin today & one more exchange upcoming!!",
-    "score": 213,
+    "title": "Buying alt coins",
+    "score": 544,
     "comments": []
 }, {
-    "title": "Read the Whitepaper they said.",
-    "score": 270,
+    "title": "The current state of the crypto market",
+    "score": 8197,
+    "comments": []
+}, {
+    "title": "ICON (ICX) - Expanding and Growing the Community",
+    "score": 600,
+    "comments": []
+}, {
+    "title": "The most optimal strategy",
+    "score": 132,
+    "comments": []
+}, {
+    "title": "Bad luck IOTA \ud83d\ude02",
+    "score": 939,
+    "comments": []
+}, {
+    "title": "Reminder: Make sure to backup your Google Authenticator keys",
+    "score": 525,
+    "comments": []
+}, {
+    "title": "Goodbye, Coinbase. Hello APPC: An alternative method to purchase cryptocurrency directly from the Android \"Aptoide\" app store. 200 million Android users will be holding cryptocurrency by the end of this year.",
+    "score": 703,
+    "comments": []
+}, {
+    "title": "Bounty0x Bit-z Exchange Listing Bounty - 4 BNTY Reward",
+    "score": 163,
+    "comments": []
+}, {
+    "title": "Jim Breyer investing in Vechain is an absolutely massive signal. Here's why.",
+    "score": 63,
+    "comments": [{
+        "score": 5,
+        "matches": ["ethereum"],
+        "content": "https://imgur.com/aGbO0rc\n\nJim Breyer standing dead center with XI JINGPING... Zuckerberg and Jack Ma on the outside. Wtf? I didn't realize Jim Breyer was this much of a baller.\n\nHe has a very small crypto portfolio: ETH and VEN... that's it. He obviously knows things I don't and he chose VEN over all of the other Chinese projects.\n\nChrist, I should just go 100% VEN (currently \"only\" 70%), put it in a vault, and come back to it a few years from now when it's worth a fortune."
+    }]
+}, {
+    "title": "XRP/Moneygram news made it to wall street papers this morning!",
+    "score": 176,
+    "comments": [{
+        "score": 6,
+        "matches": ["ripple"],
+        "content": "To those who hate: banks and traditional institutions are not going to vanish. They will remain whether crypto takes over or not. \nTo me: I am an investor. I want to make money. I do care about decentralization, but crypto is not a religion. XRP has good potential and I was in when it was .28usd. "
+    }]
+}, {
+    "title": "Oyster Pearl (PRL) market cap doubles overnight on CoinMarketCap after they correct the circulating supply",
+    "score": 433,
     "comments": []
 }, {
     "title": "Sleeping Giant: Tencent backed OST",
-    "score": 50,
+    "score": 93,
     "comments": []
 }, {
-    "title": "PayPal Checkout Engineer Creates Raiblocks Checkout App",
-    "score": 47,
+    "title": "The remains of the latest 'cheap coins' hype, reminder to not just mindlessly invest in pump & dumps (unless you really want to take the risk)",
+    "score": 66,
     "comments": []
 }, {
-    "title": "Why Stellar is the \"Triple Threat\" and should be taken more seriously..",
-    "score": 782,
+    "title": "Network Effects - The Inevitability of Waltonchain Adoption",
+    "score": 356,
+    "comments": []
+}, {
+    "title": "The great walls of VEN are back.",
+    "score": 73,
+    "comments": []
+}, {
+    "title": "Over 118,000 Koreans Have Signed a Petition to Reject the #Cryptocurrency Trading Ban Proposal",
+    "score": 380,
+    "comments": []
+}, {
+    "title": "AppCoins (APPC) has Market Cap and Circulating Supply numbers fixed, moving it to 115 on CMC",
+    "score": 77,
     "comments": []
 }]

@@ -9,8 +9,8 @@ praw = "*"
 coinmarketcap = "*"
 pandas = "*"
 numpy = "*"
-"python-twitter" = "*"
 pytrends = "*"
+tweepy = "*"
 
 
 [dev-packages]

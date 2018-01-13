@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "f73c381aba78ac6573ef7120a1aacfcb1fbb45e574434738c8c10440d278687d"
+            "sha256": "e02574baf5057a7ff5ab0afdbb36753c7c56b3bedec883ac04807cf7b53bbab9"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -46,12 +46,6 @@
                 "sha256:3134a6e197eb7c8a32dcbe95c3358f2bf5dae9fa0c2677bd754789df65ba8750"
             ],
             "version": "==4.1.1"
-        },
-        "future": {
-            "hashes": [
-                "sha256:e39ced1ab767b5936646cedba8bcce582398233d6a627067d4c6a454c90cfedb"
-            ],
-            "version": "==0.16.0"
         },
         "idna": {
             "hashes": [
@@ -168,13 +162,6 @@
             ],
             "version": "==2.6.1"
         },
-        "python-twitter": {
-            "hashes": [
-                "sha256:0c7720b2fffe488326b5faf66429b15cfd0cadb38200d20d1ae539f2eae49e4a",
-                "sha256:a9f2bd038a05ba384fa03e39949d1445349771ce7897aeb3c6d8774beba08185"
-            ],
-            "version": "==3.3"
-        },
         "pytrends": {
             "hashes": [
                 "sha256:5c8c3488be8b32b392a65d024b9abecdebee5ae66b3db1285f5c79d3701d7b9f"
@@ -222,6 +209,13 @@
                 "sha256:70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9"
             ],
             "version": "==1.11.0"
+        },
+        "tweepy": {
+            "hashes": [
+                "sha256:12449b5ca16b0be6a3ea68fb41992627227b48bbad8cd7d5912039340d36badc",
+                "sha256:f00ccf5f48c30d559ce0b750dfe3b2df6668dc799d8ce276fd90bfaa68845a58"
+            ],
+            "version": "==3.5.0"
         },
         "update-checker": {
             "hashes": [
