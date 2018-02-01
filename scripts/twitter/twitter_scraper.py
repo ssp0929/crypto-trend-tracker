@@ -34,8 +34,6 @@ def get_list_timeline(api):
         list_owner = twitter_config.get('list-owner')
         last_run_id = twitter_config.get('last-run-id', '1')
 
-
-
     # Multi-word / hyphenated crypto IDs will be stripped to first word.
     # Also populate score array with nonstripped crypto IDs.
     # ASSUMPTION: Cryptolist and Cryptotickers are sorted for a 1 to 1 mapping.
@@ -56,10 +54,9 @@ def get_list_timeline(api):
 
     # Get timeline of tweets/retweets to terminal
     # include_rts = False refers to reteweets being included or not
-    list_timeline = tweepy.Cursor(api.list_timeline, list_owner, list_name, since_id = last_run_id).items(200)
     last_run_id_not_logged = True
 
-    for status in list_timeline:
+    for status in tweepy.Cursor(api.list_timeline, owner_screen_name=list_owner, slug=list_name, since_id=last_run_id).items():
         # Skip retweets and favorites from showing up
         if status.retweeted or 'RT @' in status.text:
             continue
@@ -99,7 +96,7 @@ def get_list_timeline(api):
 
         # If match not found, then don't include comment in context data.
         if match_not_found:
-            continue
+            data.append(create_status_object(status, matches_list))
         else:
             # Append to a list for later inclusion into submission_object
             data.append(create_status_object(status, matches_list))
