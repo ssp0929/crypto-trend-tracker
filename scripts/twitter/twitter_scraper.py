@@ -56,7 +56,7 @@ def get_list_timeline(api):
     # include_rts = False refers to reteweets being included or not
     last_run_id_not_logged = True
 
-    for status in tweepy.Cursor(api.list_timeline, owner_screen_name=list_owner, slug=list_name, since_id=last_run_id).items():
+    for status in tweepy.Cursor(api.list_timeline, owner_screen_name=list_owner, slug=list_name, since_id=last_run_id).items(200):
         # Skip retweets and favorites from showing up
         if status.retweeted or 'RT @' in status.text:
             continue
@@ -96,7 +96,7 @@ def get_list_timeline(api):
 
         # If match not found, then don't include comment in context data.
         if match_not_found:
-            data.append(create_status_object(status, matches_list))
+            pass
         else:
             # Append to a list for later inclusion into submission_object
             data.append(create_status_object(status, matches_list))
