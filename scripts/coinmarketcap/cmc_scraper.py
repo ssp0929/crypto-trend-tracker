@@ -20,6 +20,7 @@ def get_price(currency, market):
     for crypto_currency in crypto:
         if currency == crypto_currency.get('id'):
             currency_found = True
+            print(currency + ' found')
             crypto = crypto_currency
             break
 
@@ -42,8 +43,9 @@ def main():
     # Populate crypto/price list
     with open('input_data/cryptolist.txt', 'r') as readfile:
         for line in readfile:
-            print(line)
-            data_price.append([line.strip(), get_price(line.strip(), market)])
+            print(line.strip())
+            price = get_price(line.strip(), market)
+            data_price.append([line.strip(), price])
 
     # Export to JSON
     with open('data/cmc_output.json', 'w') as outfile:
